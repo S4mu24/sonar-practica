@@ -2,17 +2,24 @@ package com.practica;
 
 public class Calculator {
 
+    // Bug 1 corregido
     public int divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("El divisor no puede ser cero.");
+        }
         return a / b;
     }
 
+    // Bug 2 corregido
     public String status(int val) {
-        String s = null;
-        if (val > 0) s = "positive";
+        String s;
+        if (val > 0) {
+            s = "positive";
+        } else {
+            s = "negative or zero";
+        }
         return s.toUpperCase(); 
     }
 
-    private void unused() {
-        System.out.println("");
-    }
+    // Code smell corregido
 }
